@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "544932073460",
+    "project_id": "orientmapplaces",
+    "storage_bucket": "orientmapplaces.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544932073460:android:53346b9a0f27cfef43b3a1",
+        "android_client_info": {
+          "package_name": "ru.orientmapplaces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544932073460-3lk8t0ag6i2ue5tgeknsfgt285nimua4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy5xVE1yOMMBtW4Tir8G_w8fo-50C_gIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544932073460-3lk8t0ag6i2ue5tgeknsfgt285nimua4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
