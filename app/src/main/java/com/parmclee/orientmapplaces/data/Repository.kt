@@ -40,7 +40,7 @@ class Repository {
                                    onEmptySuccessResponse: () -> Unit = {},
                                    onSuccess: (T) -> Unit) {
         val scope = MainScope()
-        scope.launch(Dispatchers.IO + mCoroutineExceptionHandler) {
+        scope.launch(mCoroutineExceptionHandler) {
             isLoading.value = true
             try {
                 val response = res()
