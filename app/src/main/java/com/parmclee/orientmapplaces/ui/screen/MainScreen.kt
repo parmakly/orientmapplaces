@@ -30,6 +30,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
@@ -69,7 +70,7 @@ fun MainScreen(permissionHelper: LocationPermissionHelper,
         rememberPermissionState(permission = Manifest.permission.ACCESS_FINE_LOCATION)
     val isLocationClicked = remember { mutableStateOf(false) }
     val mapboxMap = remember { mutableStateOf<MapboxMap?>(null) }
-    val uiState by viewModel.uiState.collectAsState()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val menuExpanded = remember { mutableStateOf(false) }
     val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
@@ -133,7 +134,7 @@ fun MainScreen(permissionHelper: LocationPermissionHelper,
     val dialogTitle = remember{ mutableStateOf("") }
     val dialogMessage = remember{ mutableStateOf("") }
     val dialogAction= remember { mutableStateOf(dialogActions[0]) }
-    val isLoading by viewModel.isLoading.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
     val mapClickListener = remember {
         OnMapClickListener {
             if (uiState.isAddingArea) {

@@ -18,6 +18,7 @@ import com.parmclee.orientmapplaces.ui.screen.SimpleAlertDialog
 import com.parmclee.orientmapplaces.ui.theme.OrientMapPlacesTheme
 import android.content.Intent
 import android.net.Uri
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 class MainActivity : ComponentActivity() {
 
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
         intent.data = null
         setContent {
             OrientMapPlacesTheme {
-                val errorFlow by viewModel.errorFlow.collectAsState()
+                val errorFlow by viewModel.errorFlow.collectAsStateWithLifecycle()
                 val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
                 val isSettingsShown = remember{ mutableStateOf(false) }
                 Surface(modifier = Modifier.fillMaxSize(),

@@ -22,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ru.orientmapplaces.R
 import com.parmclee.orientmapplaces.data.MapDateFilter
 import com.parmclee.orientmapplaces.data.Preferences
@@ -37,9 +38,9 @@ fun SettingsScreen(viewModel: MainViewModel,
         onBack()
     }
     val backHelper = LocalOnBackPressedDispatcherOwner.current
-    val state by viewModel.uiState.collectAsState()
+    val state by viewModel.uiState.collectAsStateWithLifecycle()
     val settings = state.settings
-    val isLoading by viewModel.isLoading.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
     val isAuthorized = remember{ mutableStateOf(Preferences.getLogin() != null) }
     Column(Modifier
         .fillMaxSize()
